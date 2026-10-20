@@ -1,20 +1,19 @@
-// 微交互：滚动入场 + 背景光斑缓慢漂浮
+// 微交互：滚动入场 + 背景光斑漂浮 + 卡片鼠标视差光晕
 document.addEventListener('DOMContentLoaded', () => {
-  // 所有卡片与段落做入场动画
-  document.querySelectorAll('.card, .about-box, .contact-line')
+  document.querySelectorAll('.card, .phil-item, .essay, .tl-item, .quote, .contact-line, .contact-sub')
     .forEach(el => el.classList.add('reveal'));
 
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
+    entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        e.target.classList.add('visible');
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // 光斑漂浮
+  // 光斑缓慢漂浮
   const orbs = document.querySelectorAll('.bg-orb');
   let t = 0;
   (function drift() {
@@ -25,4 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     requestAnimationFrame(drift);
   })();
+
+  // 卡片跟随鼠标的柔光
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+      const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(124,108,255,.14), var(--bg-hover) 60%)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.background = ''; });
+  });
 });
