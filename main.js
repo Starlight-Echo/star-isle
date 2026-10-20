@@ -1,6 +1,6 @@
 // 微交互：入场动画 + 光斑漂浮 + 卡片柔光 + 移动端下拉点按
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.card, .phil-item, .essay, .tl-item, .faq, .quote, .contact-line, .contact-sub')
+  document.querySelectorAll('.poem, .essay-block, .contact-line')
     .forEach(el => el.classList.add('reveal'));
 
   const io = new IntersectionObserver(entries => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // 卡片跟随鼠标的柔光
-  document.querySelectorAll('.card, .phil-item').forEach(card => {
+  document.querySelectorAll('.poem').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
       const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);

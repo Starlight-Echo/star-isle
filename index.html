@@ -3,196 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星屿集 · Nebula Notes — 测试网站</title>
-<meta name="description" content="星屿集：一个用于设计与开发测试的个人网站原型。">
+<title>星屿集 · 诗选 — 测试网站</title>
+<meta name="description" content="星屿集诗选：一个用于网页设计测试的诗歌集网站，收录中外诗歌选段。">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="bg-orb orb-1"></div>
 <div class="bg-orb orb-2"></div>
-<div class="bg-orb orb-3"></div>
 <div class="grain"></div>
 
 <!-- 测试网站声明横幅 -->
 <div class="notice-bar">
   <span class="notice-pill">TEST</span>
-  这是一个<b>测试网站</b>，仅用于网页设计与开发实验，内容均为虚构演示，不代表任何真实主体。
+  这是一个<b>测试网站</b>，用于网页设计实验。诗歌均选自公版作品，版权归原作者及译者所有。
 </div>
 
 <header class="nav">
-  <a class="logo" href="#top">星屿集<span class="dot">.</span></a>
+  <a class="logo" href="#top">星屿集<span class="dot">·</span>诗选</a>
   <nav class="menu">
     <a href="#top">首页</a>
 
     <div class="has-sub">
-      <button class="menu-btn">作品 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <button class="menu-btn">诗词 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="dropdown">
-        <a href="#work"><b>全部作品</b><span>四个项目的完整展示</span></a>
-        <a href="#work"><b>进行中</b><span>Tidepaper · lumen.css</span></a>
-        <a href="#work"><b>已归档</b><span>Orbit · 低光设计手册</span></a>
+        <a href="#classic"><b>古典诗词</b><span>唐宋明清 · 四首</span></a>
+        <a href="#modern"><b>现代诗</b><span>徐志摩 · 戴望舒</span></a>
+        <a href="#world"><b>外国诗歌</b><span>泰戈尔 · 狄金森 · 叶芝</span></a>
       </div>
     </div>
 
     <div class="has-sub">
       <button class="menu-btn">关于 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="dropdown">
-        <a href="#philosophy"><b>建岛理念</b><span>三条设计信条</span></a>
-        <a href="#timeline"><b>航行日志</b><span>时间线与里程碑</span></a>
-        <a href="#contact"><b>联系方式</b><span>寄一封信到岛上</span></a>
+        <a href="#about"><b>关于本站</b><span>一个诗歌排版实验</span></a>
+        <a href="#notes"><b>编后记</b><span>为什么是诗</span></a>
       </div>
     </div>
 
-    <a href="#essays">随笔</a>
-    <a href="#faq">问答</a>
+    <a href="#contact">联系</a>
   </nav>
 </header>
 
 <main id="top">
   <section class="hero">
-    <p class="eyebrow">✦ NEBULA NOTES · 数字小岛实验计划</p>
-    <h1>把灵感停泊在<br><span class="gradient-text">一座星屿上</span></h1>
-    <p class="sub">这里是一个正在生长的网页设计实验场：深色低光界面、渐变、微交互、二级导航——每一处细节都是一次练习。内容为虚构演示，欢迎只看设计，不必当真。</p>
+    <p class="eyebrow">✦ NEBULA NOTES · 诗歌排版实验</p>
+    <h1>在字节里<br><span class="gradient-text">种一畦月光</span></h1>
+    <p class="sub">把李白的海上明月、徐志摩的康桥柔波、泰戈尔的飞鸟，放进同一片深色夜空。这是一个诗歌排版测试站——看古老的句子如何住进现代的界面。</p>
     <div class="cta-row">
-      <a class="btn primary" href="#work">浏览作品 →</a>
-      <a class="btn ghost" href="#faq">这是什么站？</a>
-    </div>
-    <div class="hero-stats">
-      <div><b>4</b><span>演示项目</span></div>
-      <div><b>3</b><span>篇示例随笔</span></div>
-      <div><b>2</b><span>级下拉导航</span></div>
-      <div><b>100%</b><span>手写 CSS</span></div>
+      <a class="btn primary" href="#classic">开始读诗 →</a>
+      <a class="btn ghost" href="#about">这是什么站？</a>
     </div>
   </section>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>设计 ✦ 代码 ✦ 写作 ✦ 实验 ✦ 深色界面 ✦ 微交互 ✦ 渐变 ✦ 排版 ✦</span>
-      <span>设计 ✦ 代码 ✦ 写作 ✦ 实验 ✦ 深色界面 ✦ 微交互 ✦ 渐变 ✦ 排版 ✦</span>
+      <span>海上生明月 ✦ 面朝大海 春暖花开 ✦ 轻轻的我走了 ✦ 生如夏花 ✦ 当你老了 ✦</span>
+      <span>海上生明月 ✦ 面朝大海 春暖花开 ✦ 轻轻的我走了 ✦ 生如夏花 ✦ 当你老了 ✦</span>
     </div>
   </div>
 
-  <section id="philosophy" class="section">
-    <h2 class="sec-title"><span class="sec-num">01</span> 建岛理念</h2>
-    <div class="phil-grid">
-      <div class="phil-item">
-        <div class="phil-num">一</div>
-        <h3>少，但有回声</h3>
-        <p>把界面删到只剩必要，再留一处让人心动的细节。删减不是目的，回声才是——好东西会在你关掉页面之后继续响一会儿。</p>
-      </div>
-      <div class="phil-item">
-        <div class="phil-num">二</div>
-        <h3>慢，但不锈</h3>
-        <p>这座岛不追热点，更新以「月」为单位。但我希望十年后打开这里，代码依然能跑，句子依然诚恳——像礁石，而不是浪花。</p>
-      </div>
-      <div class="phil-item">
-        <div class="phil-num">三</div>
-        <h3>小，但完整</h3>
-        <p>与其做一个庞大的半成品，不如做一颗打磨过的小行星。每个项目都自己站得起来，自己解释自己。</p>
-      </div>
-    </div>
-    <blockquote class="quote">「我们建造的东西，最终会反过来塑造我们。所以我谨慎地挑选要建造什么。」</blockquote>
-  </section>
-
-  <section id="work" class="section">
-    <h2 class="sec-title"><span class="sec-num">02</span> 精选作品 <em class="sec-note">（均为虚构演示）</em></h2>
-    <div class="grid">
-      <article class="card">
-        <div class="card-top"><span class="card-tag">Web App</span><span class="card-year">2026</span></div>
-        <h3>Tidepaper 潮汐纸</h3>
-        <p>一个把每日新闻摘要排版成「潮汐曲线」的阅读器：重要的事涨成波峰，琐碎的退向滩涂。滚动时有真实的波浪阻尼。</p>
-        <div class="card-foot"><span>TypeScript · Canvas</span><span>演示·进行中</span></div>
-      </article>
-      <article class="card">
-        <div class="card-top"><span class="card-tag">开源库</span><span class="card-year">2026</span></div>
-        <h3>lumen.css</h3>
-        <p>4KB 的极简 CSS 框架。没有构建步骤，没有类名咒语，只有暗色变量、渐变工具类和克制的微动效。</p>
-        <div class="card-foot"><span>CSS · 无依赖</span><span>演示 · v0.3</span></div>
-      </article>
-      <article class="card">
-        <div class="card-top"><span class="card-tag">实验</span><span class="card-year">2025</span></div>
-        <h3>Orbit 轨道</h3>
-        <p>三体风格的引力沙盒。拖拽一颗行星，看着它的轨道被实时重写，直到某个天体被甩出星系。</p>
-        <div class="card-foot"><span>JavaScript · 物理</span><span>演示 · 已归档</span></div>
-      </article>
-      <article class="card">
-        <div class="card-top"><span class="card-tag">写作</span><span class="card-year">2025</span></div>
-        <h3>《低光设计手册》</h3>
-        <p>一篇关于暗色界面的长文：层级如何靠亮度而非阴影，以及纯黑背景上的纯白文字为什么让人眼晕。</p>
-        <div class="card-foot"><span>文章 · 1.2 万字</span><span>演示 · 已发布</span></div>
-      </article>
-    </div>
-  </section>
-
-  <section id="essays" class="section">
-    <h2 class="sec-title"><span class="sec-num">03</span> 岛上随笔</h2>
-    <div class="essay-list">
-      <a class="essay" href="javascript:void(0)">
-        <span class="essay-date">2026·09</span>
-        <div class="essay-body">
-          <h3>关于「数字断舍离」的一次实验</h3>
-          <p>删掉手机里 47 个 App，只留 12 个。三周后发现：失去的远比想象中少，多出来的时间却真实得吓人。</p>
+  <!-- 古典诗词：2×2 整齐网格 -->
+  <section id="classic" class="section">
+    <h2 class="sec-title"><span class="sec-num">壹</span> 古典诗词</h2>
+    <div class="poem-grid cols-2">
+      <article class="poem">
+        <div class="poem-head">
+          <h3>静夜思</h3>
+          <span class="poem-author">唐 · 李白</span>
         </div>
-      </a>
-      <a class="essay" href="javascript:void(0)">
-        <span class="essay-date">2026·07</span>
-        <div class="essay-body">
-          <h3>为什么我又开始写个人网站</h3>
-          <p>社交平台的账号是租的，算法决定谁看见你。而个人网站是自己的地——哪怕访客寥寥，每一寸都姓你。</p>
+        <div class="poem-body">
+          <p>床前明月光，疑是地上霜。</p>
+          <p>举头望明月，低头思故乡。</p>
         </div>
-      </a>
-      <a class="essay" href="javascript:void(0)">
-        <span class="essay-date">2026·05</span>
-        <div class="essay-body">
-          <h3>好的默认值是一种温柔</h3>
-          <p>一个工具的修养，藏在它替你做对的那 80% 里。好的默认值像一条修好的小路，让你不必每次出发前都重新勘测。</p>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>鹿柴</h3>
+          <span class="poem-author">唐 · 王维</span>
         </div>
-      </a>
+        <div class="poem-body">
+          <p>空山不见人，但闻人语响。</p>
+          <p>返景入深林，复照青苔上。</p>
+        </div>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>如梦令 · 昨夜雨疏风骤</h3>
+          <span class="poem-author">宋 · 李清照</span>
+        </div>
+        <div class="poem-body">
+          <p>昨夜雨疏风骤，浓睡不消残酒。</p>
+          <p>试问卷帘人，却道海棠依旧。</p>
+          <p>知否，知否？应是绿肥红瘦。</p>
+        </div>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>水调歌头 · 节选</h3>
+          <span class="poem-author">宋 · 苏轼</span>
+        </div>
+        <div class="poem-body">
+          <p>人有悲欢离合，月有阴晴圆缺，</p>
+          <p>此事古难全。</p>
+          <p>但愿人长久，千里共婵娟。</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section id="timeline" class="section">
-    <h2 class="sec-title"><span class="sec-num">04</span> 航行日志</h2>
-    <div class="timeline">
-      <div class="tl-item"><span class="tl-date">2026·10</span><p>星屿集部署到 GitHub Pages，测试版上线。小岛有了固定的经纬度。</p></div>
-      <div class="tl-item"><span class="tl-date">2026·06</span><p>Tidepaper 原型跑通第一次「潮汐排序」，为它熬了两个通宵。</p></div>
-      <div class="tl-item"><span class="tl-date">2026·01</span><p>lumen.css 开源。第一个陌生人的 star 让我高兴了一整天。</p></div>
-      <div class="tl-item"><span class="tl-date">2025·08</span><p>《低光设计手册》发布，开始认真思考暗色界面的全部。</p></div>
-      <div class="tl-item"><span class="tl-date">2025·03</span><p>写下第一行想认真对待的代码。此前的都是练习。</p></div>
+  <!-- 现代诗：对称双栏 -->
+  <section id="modern" class="section">
+    <h2 class="sec-title"><span class="sec-num">贰</span> 现代诗</h2>
+    <div class="poem-grid cols-2">
+      <article class="poem">
+        <div class="poem-head">
+          <h3>再别康桥 · 节选</h3>
+          <span class="poem-author">徐志摩 · 1928</span>
+        </div>
+        <div class="poem-body">
+          <p>轻轻的我走了，</p>
+          <p>正如我轻轻的来；</p>
+          <p>我轻轻的招手，</p>
+          <p>作别西天的云彩。</p>
+        </div>
+        <p class="poem-note">—— 那河畔的金柳，是夕阳中的新娘；波光里的艳影，在我的心头荡漾。</p>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>雨巷 · 节选</h3>
+          <span class="poem-author">戴望舒 · 1927</span>
+        </div>
+        <div class="poem-body">
+          <p>撑着油纸伞，独自</p>
+          <p>彷徨在悠长、悠长</p>
+          <p>又寂寥的雨巷，</p>
+          <p>我希望逢着</p>
+          <p>一个丁香一样地</p>
+          <p>结着愁怨的姑娘。</p>
+        </div>
+        <p class="poem-note">—— 她是有丁香一样的颜色，丁香一样的芬芳。</p>
+      </article>
     </div>
   </section>
 
-  <section id="faq" class="section">
-    <h2 class="sec-title"><span class="sec-num">05</span> 常见问答</h2>
-    <div class="faq-list">
-      <details class="faq" open>
-        <summary>这是一个测试网站吗？</summary>
-        <p>是的。本站仅用于网页设计与前端开发实验，全部内容（项目、文章、邮箱）均为虚构演示，不代表任何真实的人物、组织或服务。</p>
-      </details>
-      <details class="faq">
-        <summary>网站是用什么做的？</summary>
-        <p>纯手写 HTML / CSS / JavaScript，零框架、零构建、零依赖，托管在 GitHub Pages 上。整个站点不到 30KB。</p>
-      </details>
-      <details class="faq">
-        <summary>导航里的下拉菜单是怎么实现的？</summary>
-        <p>用 CSS :hover / :focus-within 实现的二级玻璃拟态下拉面板，配少量 JS 处理移动端点按展开。你可以把鼠标悬停在「作品」「关于」上试试。</p>
-      </details>
-      <details class="faq">
-        <summary>可以参考或复用这里的代码吗？</summary>
-        <p>可以。这是一个公开的学习实验，代码就在 GitHub 仓库里，欢迎 fork 和改造。</p>
-      </details>
+  <!-- 外国诗歌：2×2 -->
+  <section id="world" class="section">
+    <h2 class="sec-title"><span class="sec-num">叁</span> 外国诗歌</h2>
+    <div class="poem-grid cols-2">
+      <article class="poem">
+        <div class="poem-head">
+          <h3>飞鸟集 · 摘句</h3>
+          <span class="poem-author">泰戈尔〔印度〕· 郑振铎 译</span>
+        </div>
+        <div class="poem-body">
+          <p>生如夏花之绚烂，</p>
+          <p>死如秋叶之静美。</p>
+        </div>
+        <p class="poem-note">—— Let life be beautiful like summer flowers and death like autumn leaves.</p>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>没有一艘船能像一本书</h3>
+          <span class="poem-author">狄金森〔美〕</span>
+        </div>
+        <div class="poem-body">
+          <p>没有一艘船能像一本书，</p>
+          <p>也没有一匹马能像，</p>
+          <p>一页跳跃着的诗行那样——</p>
+          <p>把人带向远方。</p>
+        </div>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>当你老了 · 节选</h3>
+          <span class="poem-author">叶芝〔爱尔兰〕· 袁可嘉 译</span>
+        </div>
+        <div class="poem-body">
+          <p>当你老了，头发白了，睡意昏沉，</p>
+          <p>炉火旁打盹，请取下这部诗歌，</p>
+          <p>慢慢读，回想你过去眼神的柔和，</p>
+          <p>回想它们昔日浓重的阴影。</p>
+        </div>
+      </article>
+      <article class="poem">
+        <div class="poem-head">
+          <h3>啊，我若爱上你</h3>
+          <span class="poem-author">里尔克〔奥地利〕</span>
+        </div>
+        <div class="poem-body">
+          <p>我认出风暴而激动如大海，</p>
+          <p>我舒展开又蜷缩回去，</p>
+          <p>我挣脱自身，独自置身于</p>
+          <p>伟大的风暴中。</p>
+        </div>
+        <p class="poem-note">—— 选自《预感》，北岛译。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 诗句拾贝：单列居中，避免卡片参差 -->
+  <section id="notes" class="section">
+    <h2 class="sec-title"><span class="sec-num">肆</span> 编后记</h2>
+    <div class="essay-block">
+      <p>为什么是诗？因为诗是这个世界上最小的完整建筑——四行、八行，就能装下一整片月色或一场告别。</p>
+      <p>本站收录的诗均出自公版作品或短篇节选：古典诗词早已进入公共领域；徐志摩、戴望舒、狄金森、泰戈尔、叶芝、里尔克也早已离开我们足够久，他们的句子如今属于所有人。</p>
+      <p>如果你也是测试途中的过客，不妨在某一句上多停三秒。</p>
     </div>
   </section>
 
   <section id="contact" class="section">
-    <h2 class="sec-title"><span class="sec-num">06</span> 寄一封信到岛上</h2>
+    <h2 class="sec-title"><span class="sec-num">伍</span> 寄一封信到岛上</h2>
     <p class="contact-line">测试阶段的占位邮箱：<a class="mail" href="javascript:void(0)">hello@starlight-echo.dev</a>（暂未启用）</p>
-    <p class="contact-sub">等网站毕业出测试期，它会开始认真收信。</p>
   </section>
 </main>
 
 <footer>
-  <p class="foot-quote">「凡是过往，皆为序章。」</p>
-  <p class="foot-notice">⚠️ 本站为测试网站，内容虚构 · © 2026 星屿集 Nebula Notes · 用 HTML、CSS 与耐心建造</p>
+  <p class="foot-quote">「但愿人长久，千里共婵娟。」</p>
+  <p class="foot-notice">⚠️ 本站为测试网站 · 诗歌选自公版作品 · © 2026 星屿集 Nebula Notes</p>
 </footer>
 <script src="main.js"></script>
 </body>
