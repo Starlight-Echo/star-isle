@@ -36,7 +36,17 @@
       <button class="menu-btn">关于 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="dropdown">
         <a href="#about"><b>关于本站</b><span>一个诗歌排版实验</span></a>
-        <a href="#notes"><b>编后记</b><span>为什么是诗</span></a>
+        <a href="#about"><b>编后记</b><span>为什么是诗</span></a>
+      </div>
+    </div>
+
+    <div class="has-sub">
+      <button class="menu-btn">小工具 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <div class="dropdown">
+        <a href="#tools"><b>计算器</b><span>四则运算 · 支持键盘</span></a>
+        <a href="#tools"><b>倒计时 / 番茄钟</b><span>专注计时 · 到点提醒</span></a>
+        <a href="#tools"><b>字数统计</b><span>中英文混排统计</span></a>
+        <a href="#tools"><b>单位换算</b><span>长度 · 温度 · 重量</span></a>
       </div>
     </div>
 
@@ -201,18 +211,100 @@
     </div>
   </section>
 
-  <!-- 诗句拾贝：单列居中，避免卡片参差 -->
-  <section id="notes" class="section">
-    <h2 class="sec-title"><span class="sec-num">肆</span> 编后记</h2>
+  <!-- 实用小工具 -->
+  <section id="tools" class="section">
+    <h2 class="sec-title"><span class="sec-num">肆</span> 实用小工具</h2>
+
+    <div class="tool-tabs">
+      <button class="tool-tab active" data-tool="calc">计算器</button>
+      <button class="tool-tab" data-tool="timer">倒计时 · 番茄钟</button>
+      <button class="tool-tab" data-tool="count">字数统计</button>
+      <button class="tool-tab" data-tool="unit">单位换算</button>
+    </div>
+
+    <!-- 计算器 -->
+    <div class="tool-panel active" id="tool-calc">
+      <div class="tool-box calc-box">
+        <input id="calc-display" class="calc-display" type="text" readonly placeholder="0" aria-label="计算结果">
+        <div class="calc-keys">
+          <button data-k="C">C</button>
+          <button data-k="←">←</button>
+          <button data-k="(">(</button>
+          <button data-k=")">)</button>
+          <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button><button data-k="/" class="op">÷</button>
+          <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button><button data-k="*" class="op">×</button>
+          <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button><button data-k="-" class="op">−</button>
+          <button data-k="0">0</button><button data-k=".">.</button><button data-k="=" class="eq">=</button><button data-k="+" class="op">+</button>
+        </div>
+        <p class="tool-hint">支持 + − × ÷ 和括号，可直接用键盘输入，按 Enter 计算出结果。</p>
+      </div>
+    </div>
+
+    <!-- 倒计时 / 番茄钟 -->
+    <div class="tool-panel" id="tool-timer">
+      <div class="tool-box timer-box">
+        <div class="timer-presets">
+          <button data-min="25" class="preset active">番茄钟 25 分钟</button>
+          <button data-min="5" class="preset">小憩 5 分钟</button>
+          <button data-min="45" class="preset">长专注 45 分钟</button>
+        </div>
+        <div class="timer-face" id="timer-face">25:00</div>
+        <div class="timer-btns">
+          <button id="timer-start" class="btn primary">开始</button>
+          <button id="timer-reset" class="btn ghost">重置</button>
+        </div>
+        <p class="tool-hint">到点后页面会响铃并弹出提醒；切走标签页也不影响计时。</p>
+      </div>
+    </div>
+
+    <!-- 字数统计 -->
+    <div class="tool-panel" id="tool-count">
+      <div class="tool-box">
+        <textarea id="count-input" class="count-input" placeholder="把要统计的文字粘进来……写诗、写作文都能用。"></textarea>
+        <div class="count-grid">
+          <div><b id="c-total">0</b><span>总字符</span></div>
+          <div><b id="c-han">0</b><span>汉字</span></div>
+          <div><b id="c-word">0</b><span>英文单词</span></div>
+          <div><b id="c-punc">0</b><span>标点</span></div>
+          <div><b id="c-line">0</b><span>行数</span></div>
+          <div><b id="c-space">0</b><span>空格</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 单位换算 -->
+    <div class="tool-panel" id="tool-unit">
+      <div class="tool-box">
+        <div class="unit-row">
+          <select id="unit-cat" class="unit-select">
+            <option value="len">长度</option>
+            <option value="temp">温度</option>
+            <option value="weight">重量</option>
+          </select>
+        </div>
+        <div class="unit-row">
+          <input id="unit-in" class="unit-input" type="number" step="any" value="1" aria-label="输入值">
+          <select id="unit-from" class="unit-select" aria-label="源单位"></select>
+          <span class="unit-swap">⇄</span>
+          <select id="unit-to" class="unit-select" aria-label="目标单位"></select>
+          <output id="unit-out" class="unit-out">—</output>
+        </div>
+        <p class="tool-hint">换算结果会随输入实时更新。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="sec-title"><span class="sec-num">伍</span> 编后记</h2>
     <div class="essay-block">
       <p>为什么是诗？因为诗是这个世界上最小的完整建筑——四行、八行，就能装下一整片月色或一场告别。</p>
-      <p>本站收录的诗均出自公版作品或短篇节选：古典诗词早已进入公共领域；徐志摩、戴望舒、狄金森、泰戈尔、叶芝、里尔克也早已离开我们足够久，他们的句子如今属于所有人。</p>
-      <p>如果你也是测试途中的过客，不妨在某一句上多停三秒。</p>
+      <p>本站收录的诗均出自公版作品：古典诗词早已进入公共领域；徐志摩、戴望舒、狄金森、泰戈尔、叶芝、里尔克也早已离开我们足够久，他们的句子如今属于所有人。</p>
+      <p>上方的小工具是为写作与专注准备的：算一笔账、掐一段时间、数一数一首诗有几个字。如果你也是测试途中的过客，不妨在某一句上多停三秒。</p>
     </div>
   </section>
 
   <section id="contact" class="section">
-    <h2 class="sec-title"><span class="sec-num">伍</span> 寄一封信到岛上</h2>
+    <h2 class="sec-title"><span class="sec-num">陆</span> 寄一封信到岛上</h2>
     <p class="contact-line">测试阶段的占位邮箱：<a class="mail" href="javascript:void(0)">hello@starlight-echo.dev</a>（暂未启用）</p>
   </section>
 </main>
@@ -222,5 +314,6 @@
   <p class="foot-notice">⚠️ 本站为测试网站 · 诗歌选自公版作品 · © 2026 星屿集 Nebula Notes</p>
 </footer>
 <script src="main.js"></script>
+<script src="tools.js"></script>
 </body>
 </html>
