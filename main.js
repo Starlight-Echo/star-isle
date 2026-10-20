@@ -1,6 +1,6 @@
-// 微交互：滚动入场 + 背景光斑漂浮 + 卡片鼠标视差光晕
+// 微交互：入场动画 + 光斑漂浮 + 卡片柔光 + 移动端下拉点按
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.card, .phil-item, .essay, .tl-item, .quote, .contact-line, .contact-sub')
+  document.querySelectorAll('.card, .phil-item, .essay, .tl-item, .faq, .quote, .contact-line, .contact-sub')
     .forEach(el => el.classList.add('reveal'));
 
   const io = new IntersectionObserver(entries => {
@@ -26,13 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // 卡片跟随鼠标的柔光
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.card, .phil-item').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
       const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
       const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
-      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(124,108,255,.14), var(--bg-hover) 60%)`;
+      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(139,124,255,.14), var(--bg-soft) 60%)`;
     });
     card.addEventListener('mouseleave', () => { card.style.background = ''; });
   });
+
+  // 移动端：点按展开二级菜单（触摸设备没有 hover）
+  if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.has-sub > .menu-btn').forEach(btn => {
+      btn.addEventListener('click', ev => {
+        ev.stopPropagation();
+        const parent = btn.parentElement;
+        const wasOpen = parent.classList.contains('open');
+        document.querySelectorAll('.has-sub.open').forEach(p => p.classList.remove('open'));
+        if (!wasOpen) parent.classList.add('open');
+      });
+    });
+    document.addEventListener('click', () =>
+      document.querySelectorAll('.has-sub.open').forEach(p => p.classList.remove('open')));
+  }
 });

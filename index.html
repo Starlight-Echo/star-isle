@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星屿集 · Nebula Notes — 把灵感停泊在星屿上</title>
-<meta name="description" content="星屿集：Starlight_Echo 的数字小岛。关于设计、代码、写作，以及生活里那些发光的碎片。">
+<title>星屿集 · Nebula Notes — 测试网站</title>
+<meta name="description" content="星屿集：一个用于设计与开发测试的个人网站原型。">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,35 +13,66 @@
 <div class="bg-orb orb-3"></div>
 <div class="grain"></div>
 
+<!-- 测试网站声明横幅 -->
+<div class="notice-bar">
+  <span class="notice-pill">TEST</span>
+  这是一个<b>测试网站</b>，仅用于网页设计与开发实验，内容均为虚构演示，不代表任何真实主体。
+</div>
+
 <header class="nav">
   <a class="logo" href="#top">星屿集<span class="dot">.</span></a>
-  <nav>
-    <a href="#philosophy">理念</a>
-    <a href="#work">作品</a>
+  <nav class="menu">
+    <a href="#top">首页</a>
+
+    <div class="has-sub">
+      <button class="menu-btn">作品 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <div class="dropdown">
+        <a href="#work"><b>全部作品</b><span>四个项目的完整展示</span></a>
+        <a href="#work"><b>进行中</b><span>Tidepaper · lumen.css</span></a>
+        <a href="#work"><b>已归档</b><span>Orbit · 低光设计手册</span></a>
+      </div>
+    </div>
+
+    <div class="has-sub">
+      <button class="menu-btn">关于 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <div class="dropdown">
+        <a href="#philosophy"><b>建岛理念</b><span>三条设计信条</span></a>
+        <a href="#timeline"><b>航行日志</b><span>时间线与里程碑</span></a>
+        <a href="#contact"><b>联系方式</b><span>寄一封信到岛上</span></a>
+      </div>
+    </div>
+
     <a href="#essays">随笔</a>
-    <a href="#timeline">航迹</a>
-    <a href="#contact">联系</a>
+    <a href="#faq">问答</a>
   </nav>
 </header>
 
 <main id="top">
   <section class="hero">
-    <p class="eyebrow">✦ 数字小岛 · est. 2026 · 由静态 HTML 与一点固执建成</p>
+    <p class="eyebrow">✦ NEBULA NOTES · 数字小岛实验计划</p>
     <h1>把灵感停泊在<br><span class="gradient-text">一座星屿上</span></h1>
-    <p class="sub">这里是 Starlight_Echo 的私人岛屿。没有算法推送，没有热榜，只有我亲手写下的句子、亲手敲出的程序，和那些深夜里突然发光的想法。</p>
+    <p class="sub">这里是一个正在生长的网页设计实验场：深色低光界面、渐变、微交互、二级导航——每一处细节都是一次练习。内容为虚构演示，欢迎只看设计，不必当真。</p>
     <div class="cta-row">
-      <a class="btn primary" href="#work">看看作品 →</a>
-      <a class="btn ghost" href="#essays">读读随笔</a>
+      <a class="btn primary" href="#work">浏览作品 →</a>
+      <a class="btn ghost" href="#faq">这是什么站？</a>
     </div>
     <div class="hero-stats">
-      <div><b>3</b><span>在做的小项目</span></div>
-      <div><b>28</b><span>篇岛上的随笔</span></div>
-      <div><b>∞</b><span>尚未熄灭的好奇</span></div>
+      <div><b>4</b><span>演示项目</span></div>
+      <div><b>3</b><span>篇示例随笔</span></div>
+      <div><b>2</b><span>级下拉导航</span></div>
+      <div><b>100%</b><span>手写 CSS</span></div>
     </div>
   </section>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>设计 ✦ 代码 ✦ 写作 ✦ 实验 ✦ 深色界面 ✦ 微交互 ✦ 渐变 ✦ 排版 ✦</span>
+      <span>设计 ✦ 代码 ✦ 写作 ✦ 实验 ✦ 深色界面 ✦ 微交互 ✦ 渐变 ✦ 排版 ✦</span>
+    </div>
+  </div>
+
   <section id="philosophy" class="section">
-    <h2 class="sec-title">建岛理念 <span class="sec-num">01</span></h2>
+    <h2 class="sec-title"><span class="sec-num">01</span> 建岛理念</h2>
     <div class="phil-grid">
       <div class="phil-item">
         <div class="phil-num">一</div>
@@ -63,83 +94,105 @@
   </section>
 
   <section id="work" class="section">
-    <h2 class="sec-title">精选作品 <span class="sec-num">02</span></h2>
+    <h2 class="sec-title"><span class="sec-num">02</span> 精选作品 <em class="sec-note">（均为虚构演示）</em></h2>
     <div class="grid">
       <article class="card">
         <div class="card-top"><span class="card-tag">Web App</span><span class="card-year">2026</span></div>
         <h3>Tidepaper 潮汐纸</h3>
-        <p>一个把每日新闻摘要排版成「潮汐曲线」的阅读器：重要的事涨成波峰，琐碎的退向滩涂。深色低光界面，滚动时有真实的波浪阻尼。</p>
-        <div class="card-foot"><span>TypeScript · Canvas</span><span>进行中</span></div>
+        <p>一个把每日新闻摘要排版成「潮汐曲线」的阅读器：重要的事涨成波峰，琐碎的退向滩涂。滚动时有真实的波浪阻尼。</p>
+        <div class="card-foot"><span>TypeScript · Canvas</span><span>演示·进行中</span></div>
       </article>
       <article class="card">
         <div class="card-top"><span class="card-tag">开源库</span><span class="card-year">2026</span></div>
         <h3>lumen.css</h3>
-        <p>4KB 的极简 CSS 框架。没有构建步骤，没有类名咒语，只有暗色变量、渐变工具类和克制的微动效。设计信条：加载它的时间，应该比考虑要不要用它的时间短。</p>
-        <div class="card-foot"><span>CSS · 无依赖</span><span>v0.3</span></div>
+        <p>4KB 的极简 CSS 框架。没有构建步骤，没有类名咒语，只有暗色变量、渐变工具类和克制的微动效。</p>
+        <div class="card-foot"><span>CSS · 无依赖</span><span>演示 · v0.3</span></div>
       </article>
       <article class="card">
         <div class="card-top"><span class="card-tag">实验</span><span class="card-year">2025</span></div>
         <h3>Orbit 轨道</h3>
-        <p>三体风格的引力沙盒。拖拽一颗行星，看着它的轨道被实时重写，直到某个天体被甩出星系。它教会我的事：稳定从来不是宇宙的默认状态。</p>
-        <div class="card-foot"><span>JavaScript · 物理</span><span>已归档</span></div>
+        <p>三体风格的引力沙盒。拖拽一颗行星，看着它的轨道被实时重写，直到某个天体被甩出星系。</p>
+        <div class="card-foot"><span>JavaScript · 物理</span><span>演示 · 已归档</span></div>
       </article>
       <article class="card">
         <div class="card-top"><span class="card-tag">写作</span><span class="card-year">2025</span></div>
         <h3>《低光设计手册》</h3>
-        <p>一篇关于暗色界面的长文：为什么深色模式不是「把颜色反过来」，层级如何靠亮度而非靠阴影，以及那个经典的陷阱——纯黑背景上的纯白文字会让人眼晕。被几个设计周刊转载。</p>
-        <div class="card-foot"><span>文章 · 1.2 万字</span><span>已发布</span></div>
+        <p>一篇关于暗色界面的长文：层级如何靠亮度而非阴影，以及纯黑背景上的纯白文字为什么让人眼晕。</p>
+        <div class="card-foot"><span>文章 · 1.2 万字</span><span>演示 · 已发布</span></div>
       </article>
     </div>
   </section>
 
   <section id="essays" class="section">
-    <h2 class="sec-title">岛上随笔 <span class="sec-num">03</span></h2>
+    <h2 class="sec-title"><span class="sec-num">03</span> 岛上随笔</h2>
     <div class="essay-list">
       <a class="essay" href="javascript:void(0)">
         <span class="essay-date">2026·09</span>
         <div class="essay-body">
           <h3>关于「数字断舍离」的一次实验</h3>
-          <p>我删掉了手机里 47 个 App，只留下 12 个。三周后的发现：失去的东西远比想象中少，多出来的时间却真实得吓人。</p>
+          <p>删掉手机里 47 个 App，只留 12 个。三周后发现：失去的远比想象中少，多出来的时间却真实得吓人。</p>
         </div>
       </a>
       <a class="essay" href="javascript:void(0)">
         <span class="essay-date">2026·07</span>
         <div class="essay-body">
           <h3>为什么我又开始写个人网站</h3>
-          <p>社交平台的账号是租的，算法决定谁看见你。而个人网站是自己的地——哪怕只有几个访客，每一寸土地都姓你。</p>
+          <p>社交平台的账号是租的，算法决定谁看见你。而个人网站是自己的地——哪怕访客寥寥，每一寸都姓你。</p>
         </div>
       </a>
       <a class="essay" href="javascript:void(0)">
         <span class="essay-date">2026·05</span>
         <div class="essay-body">
           <h3>好的默认值是一种温柔</h3>
-          <p>一个工具的修养，藏在它替你做对的那 80% 里。好的默认值替你挡掉犹豫，就像一条修好的小路，让你不用每次出发前都重新勘测。</p>
+          <p>一个工具的修养，藏在它替你做对的那 80% 里。好的默认值像一条修好的小路，让你不必每次出发前都重新勘测。</p>
         </div>
       </a>
     </div>
   </section>
 
   <section id="timeline" class="section">
-    <h2 class="sec-title">航行日志 <span class="sec-num">04</span></h2>
+    <h2 class="sec-title"><span class="sec-num">04</span> 航行日志</h2>
     <div class="timeline">
-      <div class="tl-item"><span class="tl-date">2026·10</span><p>星屿集上线 GitHub Pages。这座小岛从今晚起有了固定的经纬度。</p></div>
-      <div class="tl-item"><span class="tl-date">2026·06</span><p>Tidepaper 原型跑通第一次「潮汐排序」，为它熬了两个通宵，值。</p></div>
-      <div class="tl-item"><span class="tl-date">2026·01</span><p>lumen.css 开源。第一个陌生人的 star 让我高兴了一整天——世界如此之大，一点点善意就能照亮。</p></div>
-      <div class="tl-item"><span class="tl-date">2025·08</span><p>《低光设计手册》发布，开始认真思考「暗色界面」这件事的全部。</p></div>
+      <div class="tl-item"><span class="tl-date">2026·10</span><p>星屿集部署到 GitHub Pages，测试版上线。小岛有了固定的经纬度。</p></div>
+      <div class="tl-item"><span class="tl-date">2026·06</span><p>Tidepaper 原型跑通第一次「潮汐排序」，为它熬了两个通宵。</p></div>
+      <div class="tl-item"><span class="tl-date">2026·01</span><p>lumen.css 开源。第一个陌生人的 star 让我高兴了一整天。</p></div>
+      <div class="tl-item"><span class="tl-date">2025·08</span><p>《低光设计手册》发布，开始认真思考暗色界面的全部。</p></div>
       <div class="tl-item"><span class="tl-date">2025·03</span><p>写下第一行想认真对待的代码。此前的都是练习。</p></div>
     </div>
   </section>
 
+  <section id="faq" class="section">
+    <h2 class="sec-title"><span class="sec-num">05</span> 常见问答</h2>
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>这是一个测试网站吗？</summary>
+        <p>是的。本站仅用于网页设计与前端开发实验，全部内容（项目、文章、邮箱）均为虚构演示，不代表任何真实的人物、组织或服务。</p>
+      </details>
+      <details class="faq">
+        <summary>网站是用什么做的？</summary>
+        <p>纯手写 HTML / CSS / JavaScript，零框架、零构建、零依赖，托管在 GitHub Pages 上。整个站点不到 30KB。</p>
+      </details>
+      <details class="faq">
+        <summary>导航里的下拉菜单是怎么实现的？</summary>
+        <p>用 CSS :hover / :focus-within 实现的二级玻璃拟态下拉面板，配少量 JS 处理移动端点按展开。你可以把鼠标悬停在「作品」「关于」上试试。</p>
+      </details>
+      <details class="faq">
+        <summary>可以参考或复用这里的代码吗？</summary>
+        <p>可以。这是一个公开的学习实验，代码就在 GitHub 仓库里，欢迎 fork 和改造。</p>
+      </details>
+    </div>
+  </section>
+
   <section id="contact" class="section">
-    <h2 class="sec-title">寄一封信到岛上 <span class="sec-num">05</span></h2>
-    <p class="contact-line">有想法想聊，或者只是想说一声「路过」——写信到 <a class="mail" href="mailto:hello@starlight-echo.dev">hello@starlight-echo.dev</a></p>
-    <p class="contact-sub">岛的邮件按月整理，认真回复每一封。</p>
+    <h2 class="sec-title"><span class="sec-num">06</span> 寄一封信到岛上</h2>
+    <p class="contact-line">测试阶段的占位邮箱：<a class="mail" href="javascript:void(0)">hello@starlight-echo.dev</a>（暂未启用）</p>
+    <p class="contact-sub">等网站毕业出测试期，它会开始认真收信。</p>
   </section>
 </main>
 
 <footer>
   <p class="foot-quote">「凡是过往，皆为序章。」</p>
-  <p>© 2026 星屿集 Nebula Notes · Starlight_Echo · 用 HTML、CSS 与耐心建造</p>
+  <p class="foot-notice">⚠️ 本站为测试网站，内容虚构 · © 2026 星屿集 Nebula Notes · 用 HTML、CSS 与耐心建造</p>
 </footer>
 <script src="main.js"></script>
 </body>
