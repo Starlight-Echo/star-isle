@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (function draw() {
     ctx.clearRect(0, 0, W, H);
     for (const b of bubbles) {
-      b.y -= b.vy;
+      b.y -= b.vy * (1 + beatSmooth * 2.4);   // 音乐播放时气泡随节拍加速上浮
       b.sway += b.swaySpeed;
       b.x += Math.sin(b.sway) * .3 * dpr;
       // 指针靠近时轻轻推开
@@ -99,13 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== 单曲播放器：播放时唱片旋转 + 均衡器跳动 =====
+  // ===== 单曲播放器：播放时唱片旋转 + 均衡器跳动 + 全站律动 =====
   const song = document.getElementById('song');
   const songCard = document.querySelector('.song-card');
+  let beat = 0, beatSmooth = 0;   // 律动值：气泡/光晕/标题共用
+
   if (song && songCard) {
-    song.addEventListener('play', () => songCard.classList.add('playing'));
-    song.addEventListener('pause', () => songCard.classList.remove('playing'));
-    song.addEventListener('ended', () => songCard.classList.remove('playing'));
+    // 播放时用 WebAudio 分析低音，得到 0~1 的节拍值
+    let actx, analyser, freqData;
+    const startAnalyser = () => {
+      if (actx) { actx.resume(); return; }
+      try {
+        actx = new (window.AudioContext || window.webkitAudioContext)();
+        const src = actx.createMediaElementSource(song);
+        analyser = actx.createAnalyser();
+        analyser.fftSize = 256;
+        src.connect(analyser);
+        analyser.connect(actx.destination);
+        freqData = new Uint8Array(analyser.frequencyBinCount);
+        (function feel() {
+          analyser.getByteFrequencyData(freqData);
+          let sum = 0;
+          for (let i = 0; i < 10; i++) sum += freqData[i];   // 低音区
+          beat = sum / 10 / 255;
+          beatSmooth = beatSmooth * 0.82 + beat * 0.18;      // 平滑
+          document.documentElement.style.setProperty('--beat', beatSmooth.toFixed(3));
+          requestAnimationFrame(feel);
+        })();
+      } catch { /* 分析失败不影响播放 */ }
+    };
+    song.addEventListener('play', () => {
+      songCard.classList.add('playing');
+      document.body.classList.add('dancing');
+      startAnalyser();
+    });
+    song.addEventListener('pause', () => { songCard.classList.remove('playing'); document.body.classList.remove('dancing'); });
+    song.addEventListener('ended', () => { songCard.classList.remove('playing'); document.body.classList.remove('dancing'); });
   }
 
   // ===== 标题渐变流动 =====

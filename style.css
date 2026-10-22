@@ -40,7 +40,12 @@ body {
 
 /* ===== 背景装饰 ===== */
 #sea { position:fixed; inset:0; z-index:-3; pointer-events:none; }
-.bg-orb { position:fixed; border-radius:50%; filter:blur(100px); opacity:.28; z-index:-2; }
+.bg-orb {
+  position:fixed; border-radius:50%; filter:blur(100px); z-index:-2;
+  opacity: calc(.24 + var(--beat, 0) * .22);
+  transform: scale(calc(1 + var(--beat, 0) * .18));
+  transition: opacity .1s linear;
+}
 .orb-1 { width:480px; height:480px; background:var(--acc1); top:-140px; right:-100px; }
 .orb-2 { width:420px; height:420px; background:var(--acc2); bottom:-140px; left:-140px; opacity:.14; }
 .grain {
@@ -100,8 +105,15 @@ body {
   max-width:980px; margin:0 auto; text-align:center;
 }
 .eyebrow { color:var(--acc2); font-size:.8rem; letter-spacing:2.5px; margin-bottom:20px; }
-h1 { font-size: clamp(2.2rem, 5.6vw, 4.3rem); line-height:1.18; font-weight:800; letter-spacing:-1px; }
-.gradient-text { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+h1 {
+  font-size: clamp(2.2rem, 5.6vw, 4.3rem); line-height:1.18; font-weight:800; letter-spacing:-1px;
+  transform: scale(calc(1 + var(--beat, 0) * .02));
+  transition: transform .08s linear;
+}
+.gradient-text {
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter: drop-shadow(0 0 calc(var(--beat, 0) * 18px) rgba(125,232,216,.55));
+}
 .sub { color:var(--muted); max-width:640px; margin:22px auto 0; font-size:1.03rem; }
 .cta-row { margin-top:30px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
 .btn { padding:13px 30px; border-radius:12px; text-decoration:none; font-weight:600; font-size:.98rem; transition:transform .2s, box-shadow .2s, border-color .2s, color .2s; }
@@ -114,10 +126,11 @@ h1 { font-size: clamp(2.2rem, 5.6vw, 4.3rem); line-height:1.18; font-weight:800;
   padding-top:22px; border-top:1px solid var(--line);
 }
 .hero-stats b {
-  display:block; font-size:1.7rem; font-weight:800;
-  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  font-size:1.05rem; font-weight:700; color:var(--muted);
+  background:var(--bg-soft); border:1px solid var(--line);
+  padding:8px 20px; border-radius:99px; transition:border-color .3s, color .3s;
 }
-.hero-stats span { color:var(--faint); font-size:.82rem; letter-spacing:1px; }
+body.dancing .hero-stats b { border-color:rgba(125,232,216,.5); color:var(--text); }
 
 
 /* ===== Section ===== */
@@ -207,6 +220,8 @@ h1 { font-size: clamp(2.2rem, 5.6vw, 4.3rem); line-height:1.18; font-weight:800;
 .eq i { width:5px; background:var(--grad); border-radius:3px; height:6px; }
 .song-card.playing .eq { opacity:1; }
 .song-card.playing .eq i { animation:eq .9s ease-in-out infinite alternate; }
+.song-card.playing { animation:sway 2.4s ease-in-out infinite; }
+@keyframes sway { 0%,100% { transform:rotate(0deg); } 25% { transform:rotate(.35deg); } 75% { transform:rotate(-.35deg); } }
 .song-card.playing .eq i:nth-child(2) { animation-delay:.15s; }
 .song-card.playing .eq i:nth-child(3) { animation-delay:.3s; }
 .song-card.playing .eq i:nth-child(4) { animation-delay:.45s; }
