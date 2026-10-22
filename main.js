@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         src.connect(analyser);
         analyser.connect(actx.destination);
         freqData = new Uint8Array(analyser.frequencyBinCount);
-        let silentFrames = 0, fakeMode = false;
+        let lastLoudAt = performance.now(), fakeMode = false;
         (function feel() {
           if (!document.body.classList.contains('dancing')) {
             document.documentElement.style.setProperty('--beat', '0');
@@ -129,9 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let sum = 0;
             for (let i = 0; i < 10; i++) sum += freqData[i];     // 低音区能量
             beat = sum / 10 / 255;
-            // 浏览器策略可能挂起音频分析（无手势/静音），持续无声就切模拟节拍
-            if (beat < 0.004) { if (++silentFrames > 90) fakeMode = true; }
-            else silentFrames = 0;
+            // 浏览器策略可能挂起音频分析（无手势/静音/后台节流），持续无声就切模拟节拍
+            const now = performance.now();
+            if (beat > 0.004) lastLoudAt = now;
+            else if (now - lastLoudAt > 1200) fakeMode = true;
           }
           if (fakeMode) {
             const t = performance.now() / 1000;
