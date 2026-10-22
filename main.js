@@ -117,18 +117,32 @@ document.addEventListener('DOMContentLoaded', () => {
         src.connect(analyser);
         analyser.connect(actx.destination);
         freqData = new Uint8Array(analyser.frequencyBinCount);
+        let silentFrames = 0, fakeMode = false;
         (function feel() {
-          analyser.getByteFrequencyData(freqData);
-          let sum = 0;
-          for (let i = 0; i < 10; i++) sum += freqData[i];       // 低音区能量
-          beat = sum / 10 / 255;
+          if (!document.body.classList.contains('dancing')) {
+            document.documentElement.style.setProperty('--beat', '0');
+            requestAnimationFrame(feel);
+            return;
+          }
+          if (!fakeMode) {
+            analyser.getByteFrequencyData(freqData);
+            let sum = 0;
+            for (let i = 0; i < 10; i++) sum += freqData[i];     // 低音区能量
+            beat = sum / 10 / 255;
+            // 浏览器策略可能挂起音频分析（无手势/静音），持续无声就切模拟节拍
+            if (beat < 0.004) { if (++silentFrames > 90) fakeMode = true; }
+            else silentFrames = 0;
+          }
+          if (fakeMode) {
+            const t = performance.now() / 1000;
+            beat = 0.22 + 0.5 * Math.pow(Math.max(0, Math.sin(t * Math.PI * 2 * 1.35)), 4);
+          }
           beatSmooth = beatSmooth * 0.82 + beat * 0.18;
           document.documentElement.style.setProperty('--beat', beatSmooth.toFixed(3));
           requestAnimationFrame(feel);
         })();
-      } else if (actx.state === 'suspended') {
-        actx.resume();
       }
+      if (actx.state === 'suspended') actx.resume().catch(() => {});
     } catch { /* 分析失败不影响播放 */ }
   };
 
