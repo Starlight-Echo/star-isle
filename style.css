@@ -301,3 +301,6 @@ footer {
   .disc-face, .eq i, .song-card.playing { animation:none !important; }
   .reveal { transition:none; opacity:1; transform:none; }
 }
+
+/* 颜文字整体不断行 */
+.kao { white-space: nowrap; }
