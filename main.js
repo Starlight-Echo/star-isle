@@ -99,6 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== 单曲播放器：播放时唱片旋转 + 均衡器跳动 =====
+  const song = document.getElementById('song');
+  const songCard = document.querySelector('.song-card');
+  if (song && songCard) {
+    song.addEventListener('play', () => songCard.classList.add('playing'));
+    song.addEventListener('pause', () => songCard.classList.remove('playing'));
+    song.addEventListener('ended', () => songCard.classList.remove('playing'));
+  }
+
   // ===== 标题渐变流动 =====
   document.querySelectorAll('.gradient-text').forEach(el => {
     el.style.backgroundSize = '200% 100%';
