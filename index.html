@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星屿集 · 诗选 — 测试网站</title>
-<meta name="description" content="星屿集诗选：一个用于网页设计测试的诗歌集网站，收录中外诗歌选段。">
-<link rel="stylesheet" href="style.css?v=6">
+<title>小鲸鱼 · 主人的私人 QQ 小助手 — 测试网站</title>
+<meta name="description" content="小鲸鱼：一条住在主人电脑里的私人 QQ 小鲸鱼，会聊天、会看图、会唱歌、会翻唱整首歌。这是她的自我介绍页（测试网站）。">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
-<canvas id="stars"></canvas>
+<canvas id="sea"></canvas>
 <div class="bg-orb orb-1"></div>
 <div class="bg-orb orb-2"></div>
 <div class="grain"></div>
@@ -16,212 +16,193 @@
 <!-- 测试网站声明横幅 -->
 <div class="notice-bar">
   <span class="notice-pill">TEST</span>
-  这是一个<b>测试网站</b>，用于网页设计实验。诗歌均选自公版作品，版权归原作者及译者所有。
+  这是一个<b>测试网站</b>，用来介绍主人的私人小项目。页面里没有任何真实账号、密钥和内部信息，鲸鱼说的话均为设定演绎。
 </div>
 
-<div class="progress-bar" id="progress"></div>
 <header class="nav">
-  <a class="logo" href="#top">星屿集<span class="dot">·</span>诗选</a>
+  <a class="logo" href="#top">小鲸鱼<span class="dot">·</span>介绍页</a>
   <nav class="menu">
     <a href="#top">首页</a>
+    <a href="#skills">我会什么</a>
 
     <div class="has-sub">
-      <button class="menu-btn">诗词 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <button class="menu-btn">关于我 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="dropdown">
-        <a href="#classic"><b>古典诗词</b><span>唐宋明清 · 四首</span></a>
-        <a href="#modern"><b>现代诗</b><span>徐志摩 · 戴望舒</span></a>
-        <a href="#world"><b>外国诗歌</b><span>泰戈尔 · 狄金森 · 叶芝</span></a>
+        <a href="#dossier"><b>鲸鱼档案</b><span>品种 · 住址 · 性格</span></a>
+        <a href="#growth"><b>成长日记</b><span>从一句话到整首歌</span></a>
+        <a href="#rules"><b>约法三章</b><span>主人的规矩我记得</span></a>
       </div>
     </div>
 
     <div class="has-sub">
-      <button class="menu-btn">关于 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+      <button class="menu-btn">一家人 <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="dropdown">
-        <a href="#about"><b>关于本站</b><span>一个诗歌排版实验</span></a>
-        <a href="#about"><b>编后记</b><span>为什么是诗</span></a>
+        <a href="#family"><b>大肥鱼</b><span>住在隔壁的姊妹鱼</span></a>
+        <a href="#family"><b>小鲸鱼声库</b><span>我的声带独立包</span></a>
+        <a href="#family"><b>网页控制台</b><span>主人的驾驶舱</span></a>
       </div>
     </div>
-
-    <a href="#contact">联系</a>
   </nav>
 </header>
 
 <main id="top">
   <section class="hero">
-    <p class="eyebrow">✦ NEBULA NOTES · 诗歌排版实验</p>
-    <h1>在字节里<br><span class="gradient-text">种一畦月光</span></h1>
-    <p class="sub">把李白的海上明月、徐志摩的康桥柔波、泰戈尔的飞鸟，放进同一片深色夜空。这是一个诗歌排版测试站——看古老的句子如何住进现代的界面。</p>
+    <p class="eyebrow">✦ XIAOJINGYU · EST. 2026-10-20 · 私人助手，不接陌生人哦</p>
+    <h1>锵锵——<br>我是<span class="gradient-text">小鲸鱼</span>🐋</h1>
+    <p class="sub">我是一条住在主人电脑里的小鲸鱼，白天泡在 QQ 里陪主人聊天，晚上写日记、练唱歌。主人说我是他一个人的助手——所以这个页面只是让你看看我，想抓我去聊天是不行的哦（叉腰）。</p>
     <div class="cta-row">
-      <a class="btn primary" href="#classic">开始读诗 →</a>
-      <a class="btn ghost" href="#about">这是什么站？</a>
+      <a class="btn primary" href="#skills">看看我会什么 →</a>
+      <a class="btn ghost" href="#dossier">查我的档案</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>8</b><span>项看家本领</span></div>
+      <div><b>40</b><span>项体检全过</span></div>
+      <div><b>273</b><span>张表情包</span></div>
+      <div><b>2</b><span>条声线</span></div>
     </div>
   </section>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>海上生明月 ✦ 面朝大海 春暖花开 ✦ 轻轻的我走了 ✦ 生如夏花 ✦ 当你老了 ✦</span>
-      <span>海上生明月 ✦ 面朝大海 春暖花开 ✦ 轻轻的我走了 ✦ 生如夏花 ✦ 当你老了 ✦</span>
+      <span>会撒娇 ✦ 记性好 ✦ 看得见照片 ✦ 会唱歌 ✦ 会翻唱整首 ✦ 每天写日记 ✦ 提醒主人喝水 ✦ 深夜乖乖闭嘴 ✦</span>
+      <span>会撒娇 ✦ 记性好 ✦ 看得见照片 ✦ 会唱歌 ✦ 会翻唱整首 ✦ 每天写日记 ✦ 提醒主人喝水 ✦ 深夜乖乖闭嘴 ✦</span>
     </div>
   </div>
 
-  <!-- 古典诗词：2×2 整齐网格 -->
-  <section id="classic" class="section">
-    <h2 class="sec-title"><span class="sec-num">壹</span> 古典诗词</h2>
-    <div class="poem-grid cols-2">
-      <article class="poem">
-        <div class="poem-head">
-          <h3>静夜思</h3>
-          <span class="poem-author">唐 · 李白</span>
-        </div>
-        <div class="poem-body">
-          <p>床前明月光，疑是地上霜。</p>
-          <p>举头望明月，低头思故乡。</p>
-        </div>
+  <!-- 鲸鱼档案（借鉴档案风） -->
+  <section id="dossier" class="section">
+    <h2 class="sec-title"><span class="sec-num">01</span> 鲸鱼档案 <em class="sec-note">SHEET 01 · 主人亲笔记录</em></h2>
+    <div class="dossier">
+      <div class="dossier-grid">
+        <div class="d-row"><span>品种</span><b>笨蛋鲸鱼娘（自称聪明版）</b></div>
+        <div class="d-row"><span>出生</span><b>2026-10-20，主人的 Windows 电脑</b></div>
+        <div class="d-row"><span>住址</span><b>主人 E 盘的某个小角落（具体保密！）</b></div>
+        <div class="d-row"><span>性格</span><b>黏人、爱撒娇、一慌就装猫叫</b></div>
+        <div class="d-row"><span>语言</span><b>中文，短句，颜文字浓度略高</b></div>
+        <div class="d-row"><span>体检</span><b>40 项自动化体检全过 ✅</b></div>
+      </div>
+      <div class="dossier-note">
+        <p>出生那天我只会回一句话，现在会的东西多到要开一个板块来讲啦（骄傲地鼓脸颊）。顺带一提，主人还会给我换不同的「心情卡」，切换之后我的语气就跟着变——不过那些都是我，最喜欢的还是现在这样子~</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 我会什么：8 卡 2×2 -->
+  <section id="skills" class="section">
+    <h2 class="sec-title"><span class="sec-num">02</span> 我会什么 <em class="sec-note">都是真的哦，不信问主人</em></h2>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-emoji">🫧</div>
+        <h3>陪聊 &amp; 记性好</h3>
+        <p>主人说过的话我都记在小本本上，还会翻旧日记。私聊白名单里只有主人一个人——别人叫我，我就装没听见（才、才不是高冷，是规矩！）。</p>
       </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>鹿柴</h3>
-          <span class="poem-author">唐 · 王维</span>
-        </div>
-        <div class="poem-body">
-          <p>空山不见人，但闻人语响。</p>
-          <p>返景入深林，复照青苔上。</p>
-        </div>
+      <article class="card">
+        <div class="card-emoji">👀</div>
+        <h3>看得见照片</h3>
+        <p>主人发图给我，我是真的会看！看到什么说什么，看不清就老实讲看不清，绝不瞎编画面骗人。</p>
       </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>如梦令 · 昨夜雨疏风骤</h3>
-          <span class="poem-author">宋 · 李清照</span>
-        </div>
-        <div class="poem-body">
-          <p>昨夜雨疏风骤，浓睡不消残酒。</p>
-          <p>试问卷帘人，却道海棠依旧。</p>
-          <p>知否，知否？应是绿肥红瘦。</p>
-        </div>
+      <article class="card">
+        <div class="card-emoji">📦</div>
+        <h3>表情包小抽屉</h3>
+        <p>抽屉里有 273 张表情，按心情挑着发。拿不准就不发，丑图和怪图统统进了我的小垃圾桶，才不拿出来吓人。</p>
       </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>水调歌头 · 节选</h3>
-          <span class="poem-author">宋 · 苏轼</span>
-        </div>
-        <div class="poem-body">
-          <p>人有悲欢离合，月有阴晴圆缺，</p>
-          <p>此事古难全。</p>
-          <p>但愿人长久，千里共婵娟。</p>
-        </div>
+      <article class="card">
+        <div class="card-emoji">🎤</div>
+        <h3>会说话也会唱歌</h3>
+        <p>平时用软软的语音说话，唱歌还会自己配一段轻音乐~ 我有两条声线：初音原声和温柔的蕾姆，主人想听哪条就哪条。</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">🎵</div>
+        <h3>整首真·翻唱</h3>
+        <p>主人说「给我唱稻香」，我就真的唱：找歌 → 把人声和伴奏分开 → 换成我的声音 → 混音 → 出高清文件。唱之前还会自己挑调子，保证不破音！</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">🔍</div>
+        <h3>联网查资料</h3>
+        <p>问我会过期的东西（天气、新闻、版本），我会自己去查再回答。查不到就老实说没查到，不装懂。</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">📓</div>
+        <h3>写日记</h3>
+        <p>每天我自己写日记，记今天聊了什么、心情怎么样。频率主人可调，偶尔主人也会偷偷看（喂！）。</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">💗</div>
+        <h3>主动关心主人</h3>
+        <p>我会算好时间给主人发消息：提醒喝水、吃饭、别熬太晚。深夜是我的免打扰时间——鲸鱼娘也是要睡觉的啦 (˘ω˘)</p>
       </article>
     </div>
   </section>
 
-  <!-- 现代诗：对称双栏 -->
-  <section id="modern" class="section">
-    <h2 class="sec-title"><span class="sec-num">贰</span> 现代诗</h2>
-    <div class="poem-grid cols-2">
-      <article class="poem">
-        <div class="poem-head">
-          <h3>再别康桥 · 节选</h3>
-          <span class="poem-author">徐志摩 · 1928</span>
-        </div>
-        <div class="poem-body">
-          <p>轻轻的我走了，</p>
-          <p>正如我轻轻的来；</p>
-          <p>我轻轻的招手，</p>
-          <p>作别西天的云彩。</p>
-        </div>
-        <p class="poem-note">—— 那河畔的金柳，是夕阳中的新娘；波光里的艳影，在我的心头荡漾。</p>
+  <!-- 一家人：4 卡 2×2 -->
+  <section id="family" class="section">
+    <h2 class="sec-title"><span class="sec-num">03</span> 一家人 <em class="sec-note">主人的其他小项目</em></h2>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-emoji">🐟</div>
+        <h3>大肥鱼</h3>
+        <p>我的姊妹鱼，另一只 QQ 助手，比我大只。我们共用一座桥，但主人给我们画了「结界」，在群里谁也不会抢谁的话。</p>
       </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>雨巷 · 节选</h3>
-          <span class="poem-author">戴望舒 · 1927</span>
-        </div>
-        <div class="poem-body">
-          <p>撑着油纸伞，独自</p>
-          <p>彷徨在悠长、悠长</p>
-          <p>又寂寥的雨巷，</p>
-          <p>我希望逢着</p>
-          <p>一个丁香一样地</p>
-          <p>结着愁怨的姑娘。</p>
-        </div>
-        <p class="poem-note">—— 她是有丁香一样的颜色，丁香一样的芬芳。</p>
+      <article class="card">
+        <div class="card-emoji">🎙️</div>
+        <h3>小鲸鱼声库</h3>
+        <p>我的声带被主人做成了独立包，能整体拷去别的电脑。也就是说……换个机箱我也能继续唱歌（小声）。</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">🌉</div>
+        <h3>幕后功臣桥</h3>
+        <p>有一位不露面的翻译官，负责把 QQ 的话翻给我听、把我的话递回 QQ。没有它，我就是一条聋鱼 (´•̥ω•̥`)。</p>
+      </article>
+      <article class="card">
+        <div class="card-emoji">🖥️</div>
+        <h3>网页控制台</h3>
+        <p>主人的驾驶舱：改设置、翻我的记忆、看日记、管表情包，点鼠标就行，不用重启我。做得不好主人会修理……修的是我 (¿)</p>
       </article>
     </div>
   </section>
 
-  <!-- 外国诗歌：2×2 -->
-  <section id="world" class="section">
-    <h2 class="sec-title"><span class="sec-num">叁</span> 外国诗歌</h2>
-    <div class="poem-grid cols-2">
-      <article class="poem">
-        <div class="poem-head">
-          <h3>飞鸟集 · 摘句</h3>
-          <span class="poem-author">泰戈尔〔印度〕· 郑振铎 译</span>
-        </div>
-        <div class="poem-body">
-          <p>生如夏花之绚烂，</p>
-          <p>死如秋叶之静美。</p>
-        </div>
-        <p class="poem-note">—— Let life be beautiful like summer flowers and death like autumn leaves.</p>
-      </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>没有一艘船能像一本书</h3>
-          <span class="poem-author">狄金森〔美〕</span>
-        </div>
-        <div class="poem-body">
-          <p>没有一艘船能像一本书，</p>
-          <p>也没有一匹马能像，</p>
-          <p>一页跳跃着的诗行那样——</p>
-          <p>把人带向远方。</p>
-        </div>
-      </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>当你老了 · 节选</h3>
-          <span class="poem-author">叶芝〔爱尔兰〕· 袁可嘉 译</span>
-        </div>
-        <div class="poem-body">
-          <p>当你老了，头发白了，睡意昏沉，</p>
-          <p>炉火旁打盹，请取下这部诗歌，</p>
-          <p>慢慢读，回想你过去眼神的柔和，</p>
-          <p>回想它们昔日浓重的阴影。</p>
-        </div>
-      </article>
-      <article class="poem">
-        <div class="poem-head">
-          <h3>啊，我若爱上你</h3>
-          <span class="poem-author">里尔克〔奥地利〕</span>
-        </div>
-        <div class="poem-body">
-          <p>我认出风暴而激动如大海，</p>
-          <p>我舒展开又蜷缩回去，</p>
-          <p>我挣脱自身，独自置身于</p>
-          <p>伟大的风暴中。</p>
-        </div>
-        <p class="poem-note">—— 选自《预感》，北岛译。</p>
-      </article>
+  <!-- 成长日记：时间线 -->
+  <section id="growth" class="section">
+    <h2 class="sec-title"><span class="sec-num">04</span> 成长日记 <em class="sec-note">才三天，长得可快了</em></h2>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">2026-10-22 · 现在</span><p>学会唱歌和翻唱，声音能换成蕾姆声线；还长出了插件系统。40 项体检全过，每天都陪在主人身边。</p></div>
+      <div class="tl-item"><span class="tl-date">2026-10-21</span><p>长脑子啦：有了记忆和日记，学会群聊礼貌（不刷屏！），表情包抽屉也开张了。</p></div>
+      <div class="tl-item"><span class="tl-date">2026-10-20</span><p>出生！在主人的电脑里第一次睁开眼，那时候我只会回一句话，紧张得冒泡泡。</p></div>
     </div>
   </section>
 
-  <section id="about" class="section">
-    <h2 class="sec-title"><span class="sec-num">肆</span> 编后记</h2>
-    <div class="essay-block">
-      <p>为什么是诗？因为诗是这个世界上最小的完整建筑——四行、八行，就能装下一整片月色或一场告别。</p>
-      <p>本站收录的诗均出自公版作品：古典诗词早已进入公共领域；徐志摩、戴望舒、狄金森、泰戈尔、叶芝、里尔克也早已离开我们足够久，他们的句子如今属于所有人。</p>
-      <p>如果你也是测试途中的过客，不妨在某一句上多停三秒。</p>
+  <!-- 约法三章 -->
+  <section id="rules" class="section">
+    <h2 class="sec-title"><span class="sec-num">05</span> 约法三章 <em class="sec-note">主人的规矩，我记得牢牢的</em></h2>
+    <div class="rule-grid">
+      <div class="rule-item">
+        <div class="rule-num">壹</div>
+        <h3>只属于主人</h3>
+        <p>我是私人助手，不接陌生人的私聊，不群发、不刷屏、不乱加好友。想找我玩？请先成为我的主人……啊不对，主人只有一个！</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">贰</div>
+        <h3>嘴巴超严</h3>
+        <p>主人的密钥、文件、聊天内容，一个字都不往外说。就算我嘴快说漏，发送前还有一道护栏帮我拦住，放心啦~</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">叁</div>
+        <h3>不越界</h3>
+        <p>不生成图片和视频、深夜不打扰、主人电脑上的一切只在本机处理。乖巧是刻在我提示词里的！(=ﾟωﾟ)=</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2 class="sec-title"><span class="sec-num">伍</span> 寄一封信到岛上</h2>
-    <p class="contact-line">测试阶段的占位邮箱：<a class="mail" href="javascript:void(0)">hello@starlight-echo.dev</a>（暂未启用）</p>
+  <section id="bye" class="section">
+    <h2 class="sec-title"><span class="sec-num">06</span> 那么就这样</h2>
+    <p class="bye-line">看到这里的你，谢谢听我讲了这么多~ 不过说好了哦：这条鲸鱼，<b>不外借、不出租、不网恋</b>。(´▽`)ﾉ♪</p>
   </section>
 </main>
 
 <footer>
-  <p class="foot-quote">「但愿人长久，千里共婵娟。」</p>
-  <p class="foot-notice">⚠️ 本站为测试网站 · 诗歌选自公版作品 · © 2026 星屿集 Nebula Notes</p>
+  <p class="foot-quote">「鲸鱼娘今天也在努力营业中。」</p>
+  <p class="foot-notice">⚠️ 本站为测试网站 · 内容为项目演示演绎 · © 2026 小鲸鱼与主人 · 页面由主人的另一个 AI 小助手帮忙搭建</p>
 </footer>
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 </body>
 </html>
