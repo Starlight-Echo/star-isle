@@ -47,16 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (d < RIPPLE) {
         ctx.beginPath();
         ctx.arc(b.x, b.y, b.r + 5 * dpr, 0, 7);
-        ctx.strokeStyle = `rgba(125,232,216,${.22 * (1 - d / RIPPLE)})`;
+        ctx.strokeStyle = `rgba(79,168,232,${.28 * (1 - d / RIPPLE)})`;
         ctx.stroke();
       }
-      const grad = ctx.createRadialGradient(b.x - b.r * .4, b.y - b.r * .4, b.r * .1, b.x, b.y, b.r);
-      if (b.hue === 'blue') { grad.addColorStop(0, 'rgba(190,220,255,.9)'); grad.addColorStop(1, 'rgba(90,167,255,.25)'); }
-      else { grad.addColorStop(0, 'rgba(210,255,246,.9)'); grad.addColorStop(1, 'rgba(125,232,216,.25)'); }
+      // 浅色背景上的玻璃泡泡：白心 + 彩色细边 + 高光点
+      const grad = ctx.createRadialGradient(b.x - b.r * .35, b.y - b.r * .35, b.r * .05, b.x, b.y, b.r);
+      if (b.hue === 'blue') { grad.addColorStop(0, 'rgba(255,255,255,.95)'); grad.addColorStop(.7, 'rgba(180,225,255,.55)'); grad.addColorStop(1, 'rgba(120,190,245,.45)'); }
+      else { grad.addColorStop(0, 'rgba(255,255,255,.95)'); grad.addColorStop(.7, 'rgba(190,250,238,.55)'); grad.addColorStop(1, 'rgba(120,225,205,.45)'); }
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.r, 0, 7);
       ctx.fillStyle = grad;
       ctx.fill();
+      ctx.strokeStyle = b.hue === 'blue' ? 'rgba(120,190,245,.45)' : 'rgba(120,225,205,.45)';
+      ctx.lineWidth = 1 * dpr;
+      ctx.stroke();
     }
     requestAnimationFrame(draw);
   })();
